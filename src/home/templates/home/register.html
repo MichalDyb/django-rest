@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<form href='{% url 'home_register' %}' method='POST'>
+    <h1>Rejestracja</h1>
+     {% csrf_token %}           
+    {{ form }}
+    <p class='error'> {{ error }} </p>
+    <input type='submit' value='Utwórz konto'>
+    <p class='info'> {{ info }} </p>
+</form>
+
+{% endblock content %}         

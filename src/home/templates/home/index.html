@@ -1,0 +1,12 @@
+{% extends 'template.html' %}
+
+{% block content %}           
+    {% if 'user' not in request.session %}
+        <h2>Aby korzystać z API zaloguj się. Jeśli nie masz konta musisz najpierw się zarejestrować.</h2>
+    {% endif %}
+
+    {% if 'user' in request.session %}
+        <a class='classic_link' href='{% url 'home_add_course' %}'>Dodaj przedmiot</a>
+        <a class='classic_link' href='{% url 'home_list_course' %}'>Lista przedmiotów</a>
+    {% endif %}
+{% endblock content %}         

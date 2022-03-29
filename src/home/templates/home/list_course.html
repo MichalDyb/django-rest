@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<h1>Lista przedmiotów</h1>
+
+<p class='error'> {{ error }} </p>
+<p class='info'> {{ info }} </p>
+
+{% for y, x in lista.items %}
+<p> 
+    {{x}} 
+    <a class='list_link' href='{% url 'home_add_exam' idCourse=y %}'>Dodaj egzamin</a>
+    <a class='list_link' href='{% url 'home_list_exam' idCourse=y %}'>Zobacz egzaminy</a>
+    <a class='list_link' href='{% url 'home_remove_course' idCourse=y %}'>Usuń przedmiot</a>
+</p>
+{% endfor %}
+
+{% endblock content %}         

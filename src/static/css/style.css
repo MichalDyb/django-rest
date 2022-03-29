@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    background-color: rgb(21, 21, 21);
+    color: white;
+}
+
+.menu {
+    background-color: rgb(71, 71, 71);
+    display: flex;
+    flex-flow: row;
+}
+
+.menu_url, .home_url {
+    display: block;
+    padding: 10px 30px 10px 30px;
+    color: aliceblue;
+    text-decoration: none;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+}
+
+.menu_url {
+    margin-right: 15px;
+}
+
+.home_url{
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+.home_url:hover, .menu_url:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+#page_main {
+    padding: 25px;
+    word-break: break-word;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    flex: 250px;
+    flex-grow: 0;
+    text-align: center;
+    width:100%;
+    align-items: center;
+
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 250px;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.info {
+    color:rgb(94, 182, 255);
+
+}
+
+.error {
+    color: rgb(255, 85, 85);
+
+}
+
+.classic_link {
+    display: block;
+    font-size: 1.6em;
+    color:floralwhite;
+    margin-top: 10px;
+}
+
+.classic_link:hover {
+    text-decoration: none;
+}
+
+.list_link {
+    color: rgb(75, 196, 64);
+    margin-left: 10px;
+}
+
+.list_link:hover {
+    color: rgb(72, 173, 62);
+    text-decoration: none;
+}
+
+.exam_info_no {
+    color: crimson;
+}
+
+.exam_info_yes {
+    color: royalblue;
+}

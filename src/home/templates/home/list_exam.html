@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<h1>Lista egzaminów</h1>
+
+<p class='error'> {{ error }} </p>
+<p class='info'> {{ info }} </p>
+
+{% for y, x in lista.items %}
+<p> 
+    {{x.description}} 
+    {% if x.isPassed %}
+        <span class='exam_info_yes'>Zaliczony</span>
+    {% endif %}
+
+
+
+    {% if not x.isPassed %}
+        <span class='exam_info_no'>Nie zaliczony</span>
+        <a class='list_link' href='{% url 'home_pass_exam' idCourse=idCourse idExam=y %}'>Zalicz egzamin</a>
+    {% endif %}
+</p>
+{% endfor %}
+
+{% endblock content %}         

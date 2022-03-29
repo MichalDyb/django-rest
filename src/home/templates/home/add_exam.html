@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<form href='{% url 'home_add_exam' idCourse %}' method='POST'>
+    <h1>Dodaj kurs</h1>
+     {% csrf_token %}           
+    {{ form }}
+    <p class='error'> {{ error }} </p>
+    <p class='info'> {{ info }} </p>
+    <input type='submit' value='Dodaj'>
+</form>
+
+{% endblock content %}         

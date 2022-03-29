@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang='pl-PL'>
+    <head>
+        <title>{{ title }}</title> 
+        <meta charset='utf-8'/>
+        <meta name='author' content='Michał Dybaś'/>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        {% load static %}                              
+        <link rel='stylesheet' type='text/css' href='{% static 'css/style.css' %}'>          
+          
+    <body>
+        <div class='menu'>
+            <a class='home_url' href='{% url 'home_index' %}'>Strona główna</a>
+
+            {% if 'user' not in request.session %}
+                <a class='menu_url left_auto' href='{% url 'home_login' %}'>Zaloguj się</a>
+                <a class='menu_url' href='{% url 'home_register' %}'>Zarejestruj się</a>
+            {% endif %}
+            
+            {% if 'user' in request.session %}
+                <a class='menu_url left_auto' href='{% url 'home_logout' %}'>Wyloguj się</a>
+            {% endif %}
+
+        </div>
+
+        <main id='page_main'>
+            <h1 class='info'>{{ main_info }}</h4>
+            <h1 class='error'>{{ main_error }}</h4>
+            {% block content %} {% endblock content %} 
+        </main>
+        
+    </body>
+
+</html>
